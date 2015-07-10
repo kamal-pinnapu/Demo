@@ -13,13 +13,7 @@
 <jar destfile="${basedir}/jar/demo.jar" basedir="${basedir}/bin" >
 
 </jar>
-
-</target>
-	
-<target name="compile" depends="create">
-
-<javac srcdir="${src.dir}" destdir="${bin.dir}"/>
-	<war destfile="${basedir}/war/HWwar.war" webxml="${basedir}/WebContent/WEB-INF/web.xml">
+<war destfile="${basedir}/war/HWwar.war" webxml="${basedir}/WebContent/WEB-INF/web.xml">
 
    <fileset dir="${basedir}/WebContent">
   </fileset>
@@ -28,6 +22,12 @@
 <ear destfile="${basedir}/myapp.ear" appxml="${basedir}">
       <fileset dir="${basedir}" includes="*.jar,*.war"/>
     </ear>
+</target>
+	
+<target name="compile" depends="create">
+
+<javac srcdir="${src.dir}" destdir="${bin.dir}"/>
+	
 </target>
 
 <target name="create" depends="clean">
