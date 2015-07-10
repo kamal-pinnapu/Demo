@@ -19,7 +19,15 @@
 <target name="compile" depends="create">
 
 <javac srcdir="${src.dir}" destdir="${bin.dir}"/>
-	
+	<war destfile="${basedir}/war/HWwar.war" webxml="${basedir}/WebContent/WEB-INF/web.xml">
+
+   <fileset dir="${basedir}/WebContent">
+  </fileset>
+   <classes dir="${basedir}/WebContent"/>
+</war>
+<ear destfile="${basedir}/myapp.ear" appxml="${basedir}">
+      <fileset dir="${basedir}" includes="*.jar,*.war"/>
+    </ear>
 </target>
 
 <target name="create" depends="clean">
