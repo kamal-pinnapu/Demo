@@ -8,20 +8,19 @@
 
 <target name="run" depends="compile">
 		
-<echo>Hello World - YEAH I AM HERE !</echo>
+<echo>Running Jar War Ear!</echo>
 
 <jar destfile="${basedir}/jar/demo.jar" basedir="${basedir}/bin" >
 
 </jar>
 <war destfile="${basedir}/war/HWwar.war" webxml="${basedir}/WebContent/WEB-INF/web.xml">
-
-   <fileset dir="${basedir}/WebContent">
-  </fileset>
-   <classes dir="${basedir}/WebContent"/>
+<fileset dir="${basedir}/WebContent">
+</fileset>
+<classes dir="${basedir}/WebContent"/>
 </war>
 <ear destfile="${basedir}/myapp.ear" appxml="${basedir}">
-      <fileset dir="${basedir}" includes="*.jar,*.war"/>
-    </ear>
+<fileset dir="${basedir}" includes="*.jar,*.war"/>
+</ear>
 </target>
 	
 <target name="compile" depends="create">
