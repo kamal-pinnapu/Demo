@@ -1,6 +1,6 @@
 <project name="Demo" default="run" basedir=".">
 
-
+<!-- this is git commit test> <-->
 <property name="src.dir" value="src"/>
 <property name="bin.dir" value="bin"/>
 <property name="jar.dir" value="jar"/>
