@@ -1,4 +1,4 @@
-<project name="Demo" default="run" basedir=".">
+<project  default="run" basedir=".">
 
 <!-- this is git commit test> <-->
 <property name="src.dir" value="src"/>
